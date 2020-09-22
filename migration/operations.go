@@ -5,7 +5,10 @@ type (
 	}
 	TableOperation struct {
 		TableName string
-		Schema string
+		Schema    string
+	}
+	CreateTableOperation struct {
+		TableOperation
 	}
 	DropTableOperation struct {
 		TableOperation
@@ -15,4 +18,6 @@ type (
 var (
 	_ DBOperation = &EmptyDBOperation{}
 	_ DBOperation = &TableOperation{}
+	_ DBOperation = &CreateTableOperation{}
+	_ DBOperation = &DropTableOperation{}
 )
