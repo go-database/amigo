@@ -24,3 +24,20 @@ func TestContext_GetAllOperations(t *testing.T) {
 		t.Error()
 	}
 }
+
+func TestContext_SetDefaultSchema(t *testing.T) {
+	ctx := NewContext()
+	ctx.SetDefaultSchema("test")
+	if ctx.defaultSchema != "test" {
+		t.Error()
+	}
+}
+
+func TestContext_GetDefaultSchema(t *testing.T) {
+	ctx := &Context{
+		defaultSchema: "test",
+	}
+	if ctx.GetDefaultSchema() != "test" {
+		t.Error()
+	}
+}
