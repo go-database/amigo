@@ -11,7 +11,7 @@ func Test_NewContext(t *testing.T) {
 
 func TestContext_AddOperation(t *testing.T) {
 	ctx := NewContext()
-	ctx.AddOperation(&EmptyDBOperation{})
+	ctx.AddOperation(&EmptyOperation{})
 	if len(ctx.operations) == 0 {
 		t.Error()
 	}
@@ -19,7 +19,7 @@ func TestContext_AddOperation(t *testing.T) {
 
 func TestContext_GetAllOperations(t *testing.T) {
 	ctx := NewContext()
-	ctx.AddOperation(&EmptyDBOperation{})
+	ctx.AddOperation(&EmptyOperation{})
 	if len(ctx.GetAllOperations()) == 0 {
 		t.Error()
 	}

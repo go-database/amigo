@@ -1,5 +1,5 @@
 package migration
 
-type DBOperation interface {
+type Operation interface {
 
 }

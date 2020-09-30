@@ -1,7 +1,7 @@
 package migration
 
 type (
-	EmptyDBOperation struct {
+	EmptyOperation struct {
 	}
 	TableOperation struct {
 		TableName string
@@ -16,8 +16,8 @@ type (
 )
 
 var (
-	_ DBOperation = &EmptyDBOperation{}
-	_ DBOperation = &TableOperation{}
-	_ DBOperation = &CreateTableOperation{}
-	_ DBOperation = &DropTableOperation{}
+	_ Operation = &EmptyOperation{}
+	_ Operation = &TableOperation{}
+	_ Operation = &CreateTableOperation{}
+	_ Operation = &DropTableOperation{}
 )

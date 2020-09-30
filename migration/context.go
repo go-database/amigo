@@ -2,18 +2,18 @@ package migration
 
 type Context struct {
 	defaultSchema string
-	operations []DBOperation
+	operations []Operation
 }
 
 func NewContext() *Context{
-	return &Context{operations: make([]DBOperation, 0)}
+	return &Context{operations: make([]Operation, 0)}
 }
 
-func (ctx *Context) AddOperation(op DBOperation) {
+func (ctx *Context) AddOperation(op Operation) {
 	ctx.operations = append(ctx.operations, op)
 }
 
-func (ctx *Context) GetAllOperations() []DBOperation {
+func (ctx *Context) GetAllOperations() []Operation {
 	return ctx.operations
 }
 
