@@ -6,7 +6,7 @@ import (
 
 type (
 	Version int64
-	
+
 	Migration interface {
 		GetVersion() Version
 		GetDescription() string
